@@ -32,13 +32,13 @@ userRoute.post("/login",async(req,res)=>{
             console.log(token)
             res.send(token)
            }else{   
-            res.status(401).send({msg:"invalid credintials"})
+            res.status(400).send({msg:"invalid credintials"})
            }
         }else{
-            res.status(401).send({msg:"invalid credintials"})
+            res.status(400).send({msg:"invalid credintials"})
         }
     }catch(err){
-        res.status(400).send('err')
+        res.status(400).send({msg:err.message})
     }
 })
 

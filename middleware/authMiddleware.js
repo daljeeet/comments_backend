@@ -6,7 +6,7 @@ const authMiddleware = async(req,res,next)=>{
         req.body={...req.body,author:token.id};
         next()
     }catch(err){
-        res.status(401).send({msg:"unauthorized"})
+        res.status(401).send({msg:err.message})
     }
 }
 module.exports = authMiddleware;

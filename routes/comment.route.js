@@ -34,7 +34,7 @@ commentRoute.patch("/:_id",async(req,res)=>{
         await Comment.findByIdAndUpdate(req.params)
         res.send("successful")
     }catch(err){
-        res.status(400).send({msg:"error while update"})
+        res.status(400).send({msg:err.message})
     }
 })
 
